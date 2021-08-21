@@ -7,18 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TooltipExampleComponent implements OnInit {
   public visible = false;
+  public mouse = { x: 0, y: 0 };
 
   constructor() { }
 
   ngOnInit(): void {  }
   
+  alteraPosicaoTooltip(x: number, y: number) {
+    this.mouse = { x, y };
+  }
+
   exibeTooltip() {
     this.visible = true;
-    console.log(`Visible: ${this.visible}`);
   }
   
   escondeTooltip() {
     this.visible = false;
-    console.log(`Visible: ${this.visible}`);
   }
 }
